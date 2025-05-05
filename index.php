@@ -250,11 +250,11 @@ items-center border border-slate-300 text-slate-300 hover:border-primary hover:b
                 <!-- 1 -->
                 <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
-                        <img src="dist/img/blog1.jpg" alt="blog1" class="w-full">
+                        <a href="blog/blog1.html"><img src="dist/img/blog/download.png" alt="blog1" class="w-full"></a>
                         <div class="py-8 px-6">
-                            <h3><a href="#" class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate">Tips Belajar Pemrograman</a></h3>
-                            <p class="font-medium text-base text-secondary mb-6">Cara mudah belajar coding dari nol hingga mahir.</p>
-                            <a href="#" class="font-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80">Baca Selengkapnya</a>
+                            <h3><a href="blog/blog1.html" class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate">Tips Belajar HTML, CSS, dan JavaScript</a></h3>
+                            <p class="font-medium text-base text-secondary mb-6">Tutorial Belajar HTML, CSS, dan JavaScript.</p>
+                            <a href="blog/blog1.html" class="font-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80">Baca Selengkapnya</a>
                         </div>
                     </div>
                 </div>
