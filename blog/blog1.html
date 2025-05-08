@@ -2,26 +2,61 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Video YouTube di Tengah</title>
+  <title>Tutorial Belajar JavaScript dari Dasar hingga Mahir</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
+<body class="bg-white text-gray-800">
 
-<body>
-   
-<br>
-<div class=" flex items-center justify-center min-h-screen">
-  <div class="w-full max-w-2xl aspect-video">
-    <h1 class="font-semibold">🌐 Tutorial Belajar HTML, CSS, dan JavaScript dari Dasar hingga Mahir</h1>
+<div class="min-h-screen flex items-center justify-center p-4">
+  <div class="w-full max-w-2xl" data-aos="fade-up" data-aos-duration="1000">
+
+    <!-- Judul -->
     <br>
-    <iframe
-      class="w-full h-full rounded-lg shadow-lg"
-      src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-      title="YouTube video"
-      frameborder="0"
-      allowfullscreen
-    ></iframe>
+    <h1 class="text-xl font-bold mb-2">
+      🌐 Tutorial Belajar JavaScript dari Dasar hingga Mahir
+    </h1>
+    <p class="text-sm text-gray-500 mb-4">595 rb x ditonton • 2 tahun yang lalu Dipublikasikan oleh Dea Afrizal</p>
+
+    <!-- Video -->
+    <div class="relative w-full aspect-video mb-4">
+      <iframe
+        class="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg"
+        src="https://www.youtube.com/embed/mD6uSGSjgr4"
+        title="YouTube video"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <!-- Channel Info -->
+    <div class="flex items-center gap-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+      <div>
+        <p class="font-semibold">Dea Afrizal</p>
+        <p class="text-sm text-gray-500">528 rb subscriber</p>
+      </div>
+    </div>
+
+    <!-- Deskripsi/Rangkuman -->
+    <div class="bg-gray-100 p-4 rounded-lg shadow" data-aos="fade-up" data-aos-delay="400">
+      <h2 class="font-semibold text-lg mb-2">📌 Ringkasan Video:</h2>
+      <p class="text-sm leading-relaxed">
+        Video ini adalah panduan lengkap untuk pemula yang ingin belajar HTML, CSS, dan JavaScript dari dasar. 
+        Dibawakan dengan cara yang mudah dipahami, tutorial ini mencakup struktur dasar HTML, styling dengan CSS, 
+        serta interaktivitas menggunakan JavaScript. Cocok untuk kamu yang ingin mulai belajar web development dari nol hingga mahir.
+      </p>
+    </div>
+
   </div>
 </div>
+
+<!-- AOS Script -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 
 </body>
 </html>
