@@ -7,7 +7,35 @@
     <link href="dist/output.css" rel="stylesheet">
     <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    
+    <style>
+       .name-container {
+            display: inline-flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .name {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #000000;
+            letter-spacing: 1px;
+            line-height: 1;
+        }
+        
+        .cursor {
+            display: inline-block;
+            width: 3px;
+            height: 3rem;
+            background-color: #000000;
+            margin-left: 5px;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
 
 </head>
 <body>
@@ -39,15 +67,15 @@
                             </li>
                             <li class="group">
                                 <a href="#clients" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Clients</a>
-                            </li>
+                            </li>   
                             <li class="group">
                                 <a href="#service" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Services</a>
                             </li>
                             <li class="group">
-                                <a href="#blog" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Blog</a>
+                                <a href="#achievement" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Achievement</a>
                             </li>
                             <li class="group">
-                                <a href="#achievement" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Achievement</a>
+                                <a href="#blog" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Blog</a>
                             </li>
                             <li class="group">
                                 <a href="#contact" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Contact</a>
@@ -67,7 +95,53 @@
                 <div class="w-full self-center px-6 lg:w-1/2">
                     <h1 class="text-base font-semibold text-primary md:text-xl">
     Halo Semua 👋, Saya 
-    <span class="block font-bold text-slate-900 text-4xl mt-1 lg:text-5xl">Muh Dzaky Luthfi</span>
+    <br> 
+    <span id="animated-name" class="name"></span>
+    <span class="cursor"></span>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const nameElement = document.getElementById('animated-name');
+            const fullName = "MUH. DZAKY LUTHFI";
+            let name = "";
+            let isDeleting = false;
+            let typingSpeed = 150;
+            let pauseDuration = 2000;
+            
+            function typeName() {
+                if (!isDeleting && name.length < fullName.length) {
+                    // Typing forward
+                    name = fullName.substring(0, name.length + 1);
+                } else if (isDeleting && name.length > 0) {
+                    // Deleting
+                    name = fullName.substring(0, name.length - 1);
+                }
+                
+                // Update the displayed name
+                nameElement.textContent = name;
+                
+                // Determine typing speed (faster when deleting)
+                let currentSpeed = isDeleting ? typingSpeed / 2 : typingSpeed;
+                
+                // Check if we've reached the end of typing or deleting
+                if (!isDeleting && name.length === fullName.length) {
+                    // Pause at the end before starting to delete
+                    currentSpeed = pauseDuration;
+                    isDeleting = true;
+                } else if (isDeleting && name.length === 0) {
+                    // Pause at the beginning before starting to type again
+                    currentSpeed = pauseDuration;
+                    isDeleting = false;
+                }
+                
+                // Schedule next character
+                setTimeout(typeName, currentSpeed);
+            }
+            
+            // Start the animation
+            typeName();
+        });
+    </script>
 </h1>
 
 <h2 class="font-medium text-secondary text-lg mb-5 lg:text-2xl">
